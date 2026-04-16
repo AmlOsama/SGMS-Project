@@ -6,6 +6,8 @@ if [ ! -D "$BD_DIR"];
 then 
     mkdir "$BD_DIR"
 fi
+#source helpers file
+source ./lib/helpers.sh
 
 
 #source validation file

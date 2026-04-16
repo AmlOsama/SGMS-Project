@@ -15,15 +15,15 @@ clear
     break
     ;;
     "List Students")
-    source ./modules/subjects/list_students.sh
+    source ./modules/students/list_students.sh
     break
     ;;
     "Update Student")
-    source ./modules/grades/update_student.sh
+    source ./modules/students/update_student.sh
     break
     ;;
     "Delete Student")
-    source ./modules/reports/delete_student.sh
+    source ./modules/students/delete_student.sh
     break
     ;;
     "Exit")
