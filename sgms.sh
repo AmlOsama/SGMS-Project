@@ -7,4 +7,9 @@ then
     mkdir "$BD_DIR"
 fi
 
+
+#source validation file
+source ./lib/validate.sh
+
+#source main file
 source ./modules/main_menu.sh
