@@ -1,10 +1,10 @@
-#! usr/bin/bash
+#! /usr/bin/bash
 
-function add_stu{
+function add_stu {
     while true
     do
         #get stu id
-        read -p "Enter student id : (make sure it's unique and up to 10 digits)" id
+        read -p "Enter student id : (make sure it's unique and up to 10 digits): " id
 
         #check the constraints of the id numeric and up to 10 digits
         if [[ ! $id =~ ^[0-9]{1,10}$ ]];
@@ -15,11 +15,13 @@ function add_stu{
 
 
         #validate is it unique or not
-        if [ -f $DB_DIR/students/$id.stu ]
+       if [ -f "$DB_DIR/students/$id.stu" ]
         then 
-            echo "the id $d already exists please add a unique one"
+            echo "the id $id already exists please add a unique one"
             continue
         fi
+
+        else 
         break
 
 
@@ -82,7 +84,7 @@ function add_stu{
 
 
 #load the stu data to the file
-    local stu_file="$DB_DIR/students/$id.stu"
+ stu_file="$DB_DIR/students/$id.stu"
 
     echo "$id" > "$stu_file"
     echo "$full_name" >> "$stu_file"
