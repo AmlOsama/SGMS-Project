@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function delete_stu {
+    clear
 
     # check if any students exist
     local files=("$DB_DIR/students/"*.stu)
@@ -13,19 +14,16 @@ function delete_stu {
     while true
     do
         read -p "Enter student id to delete: " id
-
         if [[ ! $id =~ ^[0-9]{1,10}$ ]]
         then
             echo "Invalid student id. Please enter a numeric id with up to 10 digits."
             continue
         fi
-
         if [ ! -f "$DB_DIR/students/$id.stu" ]
         then
             echo "Student with id $id not found!"
             continue
         fi
-
         break
     done
 
