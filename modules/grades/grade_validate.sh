@@ -3,7 +3,6 @@
 
 
 function convert_score_to_letter() {
-    clear
     local score=$1
 
     #comarisson of floating point 
@@ -26,7 +25,6 @@ function convert_score_to_letter() {
 }
 
 function validate_student_exists() {
-    clear
     local student_id=$1
     if [ ! -f "$DB_DIR/students/$student_id.stu" ]
     then
@@ -36,8 +34,7 @@ function validate_student_exists() {
     return 0
 }
 
-function validate_subject_exists {
-    clear
+function validate_subject_exists() {
     local subject_code=$1
     if [ ! -f "$DB_DIR/subjects/$subject_code.sub" ]
     then
@@ -48,23 +45,21 @@ function validate_subject_exists {
 }
 
 function grade_already_exists() {
-    clear
     local student_id=$1
     local subject_code=$2
     local grade_file="$DB_DIR/grades/$subject_code.grd"
 
-    #if file exists first 
-    if [ ! -f "$grade_file" ]
+    if [[ -f "$grade_file" ]]
     then
-        return 1   
-    fi
-
-    #  line starting with student_id| exists
-    # if grep "^$student_id|" "$grade_file" > /dev/null
-    if grep -q "^$student_id|" "$grade_file"
-    then
-    return 0  
+        local target_student=0
+        target_student=$( awk -F"|" -v student_id="$student_id" ' $1 == student_id {print NR}' $grade_file )
+        if [[ $target_student == 0 ]]
+        then
+            return 1
+        else
+            return 0
+        fi
     else
-    return 1   
+        return 1
     fi
 }
