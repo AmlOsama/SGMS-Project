@@ -9,7 +9,7 @@ do
     read -p "Enter new Subject Code: " sub_code
     if [[ -z $sub_code || $( validateCode $sub_code ) == "false" ]]
     then 
-        echo "Invalid input, Please enter only numeric positive values"
+        echo "Invalid input, e.g. CS101, MATH203"
         continue ;
     fi
     #current Codes
@@ -33,7 +33,7 @@ do
     read -p "Enter new Subject Name: " sub_name
     if [[ -z $sub_name ]]
     then 
-        echo "Invalid input, Please enter only Characters  values"
+        echo "Invalid input, Subject name cant be empty"
         continue ;
     fi
     echo "$sub_name" >> "$NEWFILE"
@@ -45,7 +45,7 @@ do
     read -p "Enter new Subject Credits: " sub_credits
     if [[ -z $sub_credits || $( validateCredits $sub_credits ) == "false" ]]
     then 
-        echo "Invalid input, Please enter a valid credits [1-5] "
+        echo "Invalid input, Please enter a valid credits [1-6] "
         continue ;
     fi
     echo "$sub_credits" >> "$NEWFILE"
