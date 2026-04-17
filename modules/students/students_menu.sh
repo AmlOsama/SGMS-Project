@@ -9,6 +9,7 @@ source ./modules/students/delete_student.sh
 PS3=$'\nChoose an option [1,2,3,....]: '
 while true
 do
+    clear
     echo "======================================"
     echo "============ Students Menu ==============="
     echo "======================================"

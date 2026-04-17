@@ -1,5 +1,7 @@
 
 TABLE_DATA_PATH="$DB_DIR/subjects"
+source ./helper_functions.sh
+
 
 while true;
 do
