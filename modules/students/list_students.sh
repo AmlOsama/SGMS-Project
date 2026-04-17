@@ -1,5 +1,6 @@
 #!/bin/bash
 function list_stu {
+    clear
     
     # check the existance of student files
     local files=("$DB_DIR/students/"*.stu)
