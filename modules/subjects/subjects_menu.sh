@@ -28,8 +28,8 @@ clear
     source ./modules/subjects/delete_subject.sh
     break
     ;;
-    "Exit")
-    Exit 0
+    "Back to Main Menu")
+    source ./modules/main_menu.sh
     ;;
     esac
     done
