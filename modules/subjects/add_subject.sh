@@ -31,7 +31,7 @@ done
 while true ;
 do
     read -p "Enter new Subject Name: " sub_name
-    if [[ -z $sub_name || $( validateName $sub_name ) == "false" ]]
+    if [[ -z $sub_name ]]
     then 
         echo "Invalid input, Please enter only Characters  values"
         continue ;
