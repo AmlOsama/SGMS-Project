@@ -3,6 +3,7 @@
 
 
 function convert_score_to_letter() {
+    clear
     local score=$1
 
     #comarisson of floating point 
@@ -25,6 +26,7 @@ function convert_score_to_letter() {
 }
 
 function validate_student_exists() {
+    clear
     local student_id=$1
     if [ ! -f "$DB_DIR/students/$student_id.stu" ]
     then
@@ -35,6 +37,7 @@ function validate_student_exists() {
 }
 
 function validate_subject_exists {
+    clear
     local subject_code=$1
     if [ ! -f "$DB_DIR/subjects/$subject_code.sub" ]
     then
@@ -45,6 +48,7 @@ function validate_subject_exists {
 }
 
 function grade_already_exists() {
+    clear
     local student_id=$1
     local subject_code=$2
     local grade_file="$DB_DIR/grades/$subject_code.grd"

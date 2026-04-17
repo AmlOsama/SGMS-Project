@@ -1,6 +1,7 @@
 #! /usr/bin/bash
 
 function add_stu {
+    clear
     while true
     do
         #get stu id
@@ -19,10 +20,9 @@ function add_stu {
         then 
             echo "the id $id already exists please add a unique one"
             continue
-        fi
-
         else 
-        break
+            break
+        fi
 
 
     done
@@ -33,7 +33,6 @@ function add_stu {
         read -p "Enter Full Name (First Last): " full_name
 
         #name should be alphabetic and the first and last name should be at least 2 characters
-
 
         first_name=$(echo "$full_name" | awk '{print $1}')
         last_name=$(echo "$full_name" | awk '{print $2}')

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function update_stu {
-
+clear
     local files=("$DB_DIR/students/"*.stu)
     if [ ! -f "${files[0]}" ]
     then
