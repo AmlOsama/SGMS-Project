@@ -41,19 +41,23 @@ function assign_grade {
         break
     done
 ##############
-# Get subject code + validate
-local code
-while true
- do
- done
+    # Get subject code + validate
+    local code
+    while true
+    do
+            read -p "Enter Subject Code: " code
+            if [[ ! $code =~ ^[a-zA-Z]{2,5}[0-9]{2,4}$ ]]
+            then
+                echo "Invalid input, e.g. CS101, MATH203"
+                continue
+            fi
 
-
-
-
-
-
-
-
+            if ! validate_subject_exists "$code"
+            then
+                continue  
+            fi
+            break
+    done
 
 #############
 
