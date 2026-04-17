@@ -1,6 +1,6 @@
 
 TABLE_DATA_PATH="$DB_DIR/subjects"
-source ./helper_functions.sh
+source ./modules/subjects/helper_functions.sh
 
 
 while true;
