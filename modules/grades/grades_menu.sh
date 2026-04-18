@@ -32,6 +32,7 @@ clear
     ;;
     "View Grades by Student")
     source ./modules/grades/view_by_student.sh
+    view_grades_by_student
     break
     ;;
     "Back to Main Menu")
