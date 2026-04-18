@@ -1,6 +1,5 @@
 #!/bin/bash
 
-source ./modules/grades/grade_validate.sh
 clear
 function assign_grade() {
     #id check for stu
@@ -105,7 +104,7 @@ function assign_grade() {
         echo "==========================================="
         echo "     Grade Assigned Successfully!        "
         echo "==========================================="
-        echo "New Subject Added: $student_id | $score | $letter"
+        echo "New Grade Added: $student_id | $score | $letter"
         echo "==========================================="
         read -p "Press Enter to continue..."
     fi

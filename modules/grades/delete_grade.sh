@@ -24,5 +24,8 @@ then
         fi
     fi
     read -rp "Press Enter to continue..."
+else
+    echo "Target subject grades doesn't exist"
+    read -rp "Press Enter to continue..."
 fi
 

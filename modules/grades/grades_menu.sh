@@ -1,6 +1,9 @@
 #!/bin/bash
 TABLE_DATA_PATH="$DB_DIR/grades"
 
+#helper functions
+source ./modules/grades/grade_validate.sh
+
 while true;
 do
 clear
