@@ -9,7 +9,7 @@ clear
     echo "======================================"
     echo "============ Subjects Menu ==========="
     echo "======================================"
-    select choice in "Add Subject" "List Subjects" "Update Subject" "Delete Subject" "Exit"
+    select choice in "Add Subject" "List Subjects" "Update Subject" "Delete Subject" "Back to Main Menu"
     do
     case $choice in
     "Add Subject")

@@ -1,5 +1,6 @@
+#!/bin/bash
 
-
+PS3=$'\nChoose an option [1,2,3,....]: '
 while true;
 do
 clear
@@ -25,9 +26,10 @@ clear
     source ./modules/reports/reports_menu.sh
     break
     ;;
-    "Exit")
-    Exit 0
-    ;;
+    "Exit")echo "Goodbye!"; exit 0 ;;
+    *) 
+        echo "Invalid option." 
+            ;;
     esac
     done
 done

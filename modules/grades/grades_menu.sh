@@ -1,4 +1,4 @@
-
+#!/bin/bash
 TABLE_DATA_PATH="$DB_DIR/grades"
 
 while true;
@@ -7,7 +7,7 @@ clear
     echo "======================================"
     echo "============ Grades Menu ==========="
     echo "======================================"
-    select choice in "Assign Grade to Student" "Update Existing Grade" "Delete a Grade" "View Grades by Subject" "View Grades by Student" "Exit"
+    select choice in "Assign Grade to Student" "Update Existing Grade" "Delete a Grade" "View Grades by Subject" "View Grades by Student" "Back to Main Menu"
     do
     case $choice in
     "Assign Grade to Student")
@@ -24,6 +24,7 @@ clear
     ;;
     "View Grades by Subject")
     source ./modules/grades/view_by_subject.sh
+    view_by_subject
     break
     ;;
     "View Grades by Student")
