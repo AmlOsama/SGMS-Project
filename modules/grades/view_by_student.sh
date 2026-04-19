@@ -4,9 +4,9 @@ source ./modules/grades/grade_validate.sh
 function view_grades_by_student()
 {
     clear
-    # Validate student exists
-    local stu_file="$DB_DIR/students/"*.stu
-    if [ ! -f $stu_file ]
+    #validate student exists
+    local stu_file=("$DB_DIR/students/"*.stu)
+   if [ ! -f "${stu_files[0]}" ]
     then
         echo "No students found!"
         read -p "Press Enter to continue..."
@@ -51,7 +51,7 @@ function view_grades_by_student()
         continue
     fi
     #search for the id in grade file
-    local line=$(grep "^$student_id|" "$grade_file")
+    local line=$(grep "^$id|" "$grade_file")
 
     #check if the student in this subject
     if [ -z "$line" ]
