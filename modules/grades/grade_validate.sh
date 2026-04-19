@@ -24,6 +24,26 @@ function convert_score_to_letter() {
 
 }
 
+function letter_to_points {
+    local letter=$1
+    local points=0
+
+    case $letter in
+        "A+"|"A") points=4.0 ;;
+        "A-")     points=3.7 ;;
+        "B+")     points=3.3 ;;
+        "B")      points=3.0 ;;
+        "B-")     points=2.7 ;;
+        "C+")     points=2.3 ;;
+        "C")      points=2.0 ;;
+        "C-")     points=1.7 ;;
+        "D")      points=1.0 ;;
+        "F")      points=0.0 ;;
+    esac
+
+    echo "$points"
+}
+
 function validate_student_exists() {
     local student_id=$1
     if [ ! -f "$DB_DIR/students/$student_id.stu" ]
