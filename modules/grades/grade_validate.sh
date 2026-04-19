@@ -83,3 +83,37 @@ function grade_already_exists() {
         return 1
     fi
 }
+
+
+
+function calculate_student_gpa {
+    local student_id=$1
+    local total_points=0
+    local count=0
+    for grade_file in "$DB_DIR/grades/"*.grd
+    do
+        #skip if no .grd 
+        if [ ! -f "$grade_file" ]
+        then
+            continue
+        fi
+        local line=$(grep "^$student_id|" "$grade_file")
+        if [ -z "$line" ]
+        then
+            continue
+        fi
+        #extract letter grade
+        local letter=$(echo "$line" | cut -d'|' -f3)
+        #convert letter to GPA points
+        local points=$(letter_to_points "$letter")
+        total_points=$(awk -v t="$total_points" -v p="$points" 'BEGIN { print t + p }')
+        count=$((count + 1))
+    done
+    if [ "$count" -eq 0 ]
+    then
+        echo "0.00"
+    else
+        awk -v t="$total_points" -v c="$count" 'BEGIN { printf "%.2f", t/c }'
+    fi
+}
+

@@ -1,5 +1,5 @@
 #!/bin/bash
-
+PS3=$'\nChoose an option [1,2,3,....]: '
 while true;
 do
 clear
@@ -11,6 +11,7 @@ clear
     case $choice in
     "Student Transcript + GPA")
     source ./modules/reports/transcript.sh
+    student_transcript
     break
     ;;
     "Subject Statistics")
@@ -19,10 +20,12 @@ clear
     ;;
     "Top Students by GPA")
     source ./modules/reports/top_students.sh
+    top_students_by_gpa
     break
     ;;
     "Failing Students Report")
     source ./modules/reports/failing_report.sh
+    failing_students_report
     break
     ;;
     "Full Grade Matrix")
