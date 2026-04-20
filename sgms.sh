@@ -10,5 +10,3 @@ mkdir -p "$DB_DIR/grades"
 # load modules
 source ./modules/main_menu.sh
 
-
-main_menu
