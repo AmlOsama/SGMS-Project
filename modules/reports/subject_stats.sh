@@ -41,7 +41,7 @@ awk -F"|" -v sub_name=$subject_name -v sub_code=$subject_code  '
             low = $2;
         if ( $2 > high)
             high = $2
-        if ( $2 >= 50 )
+        if ( $2 >= 45 )
             pass_count++
         else 
             fail_count++
