@@ -22,8 +22,12 @@ then
     read -p "Press Enter to continue..."
     return
 fi
-    
-awk -F"|" '
+subject_file="$DB_DIR/subjects/$sub_code.sub"
+
+subject_name=$(awk 'NR==2' "$subject_file") 
+subject_code=$(awk 'NR==1' "$subject_file") 
+
+awk -F"|" -v sub_name=$subject_name -v sub_code=$subject_code  '
     BEGIN{
         total = 0
         high = -1
@@ -45,7 +49,7 @@ awk -F"|" '
     END{
         avg = (NR > 0) ? total / NR : 0
         print("============================================") 
-        print("Statistics for: Programming (CS101)")  
+        print("Statistics for:" sub_name "(" sub_code ")")  
         print("============================================") 
         print("Total Students:   " NR) 
         print("Highest Score:    "high) 

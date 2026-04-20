@@ -38,7 +38,7 @@ function top_students_by_gpa {
         local gpa=$(calculate_student_gpa "$id")
 
       
-        if [ "$gpa" = "0.00" ]
+        if [ "$gpa" == "0.00" ]
         then
             continue
         fi

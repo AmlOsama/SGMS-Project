@@ -39,7 +39,7 @@ then
 
         letter=$(convert_score_to_letter "$score")
         #add to grade file
-        sed -i "${target_student}s/*./'$student_id|$score|$letter'/" $FILEPATH
+        sed -i "${target_student}s/.*/'$student_id|$score|$letter'/" $FILEPATH
 
         echo ""
         echo "==========================================="
