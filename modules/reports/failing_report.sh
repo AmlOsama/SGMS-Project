@@ -14,7 +14,7 @@ function failing_students {
 
     echo ""
     echo "============================================================"
-    echo " Failing Students Report (Score < 50)"
+    echo " Failing Students Report (Score < 44)"
     echo "============================================================"
     echo "ID" "Name" "Subject" "Score" "Letter"
     echo "------------------------------------------------------------"
@@ -42,9 +42,9 @@ function failing_students {
 
         while IFS='|' read -r id score letter
         do
-            #if score < 50 (failing)
+            #if score < 44 (failing)
             local is_failing=$(awk -v s="$score" 'BEGIN { 
-                if (s < 50) print 1
+                if (s < 44) print 1
                 else print 0 
             }')
 
