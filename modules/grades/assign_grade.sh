@@ -1,7 +1,8 @@
 #!/bin/bash
 
-clear
+
 function assign_grade() {
+    clear
     #id check for stu
     local stu_files=("$DB_DIR/students/"*.stu)
     if [ ! -f "${stu_files[0]}" ]
@@ -110,5 +111,3 @@ function assign_grade() {
     fi
 
 }
-
-assign_grade

@@ -15,6 +15,7 @@ clear
     case $choice in
     "Assign Grade to Student")
     source ./modules/grades/assign_grade.sh
+    assign_grade
     break
     ;;
     "Update Existing Grade")

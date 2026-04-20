@@ -5,25 +5,13 @@ function top_students_by_gpa {
     clear
 
    #validate student exists
-    local stu_file=("$DB_DIR/students/"*.stu)
+    local stu_files=("$DB_DIR/students/"*.stu)
    if [ ! -f "${stu_files[0]}" ]
     then
         echo "No students found!"
         read -p "Press Enter to continue..."
         return
     fi
-    #get id 
-    local id=""
-    while true 
-    do 
-    read -p "Enter student ID: " id
-    if ! validate_student_exists "$id"
-        then
-            continue
-        fi
-
-        break
-    done
        
     # if any grades exist
     local grade_files=("$DB_DIR/grades/"*.grd)

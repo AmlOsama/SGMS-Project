@@ -5,7 +5,6 @@
 function convert_score_to_letter() {
     local score=$1
 
-    #comarisson of floating point 
     local letter=$(awk -v s="$score" 'BEGIN {
     if (s >= 90) print "A+"
     else if (s >= 85) print "A"
@@ -64,23 +63,22 @@ function validate_subject_exists() {
     return 0
 }
 
+
 function grade_already_exists() {
     local student_id=$1
     local subject_code=$2
     local grade_file="$DB_DIR/grades/$subject_code.grd"
 
-    if [[ -f "$grade_file" ]]
+    if [ ! -f "$grade_file" ]
     then
-        local target_student=0
-        target_student=$( awk -F"|" -v student_id="$student_id" ' $1 == student_id {print NR}' $grade_file )
-        if [[ $target_student == 0 ]]
-        then
-            return 1
-        else
-            return 0
-        fi
-    else
         return 1
+    fi
+
+    if grep -q "^${student_id}|" "$grade_file"
+    then
+        return 0   
+    else
+        return 1   
     fi
 }
 
