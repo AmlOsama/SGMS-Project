@@ -25,7 +25,7 @@ clear
     ;;
     "Failing Students Report")
     source ./modules/reports/failing_report.sh
-    failing_students_report
+    failing_students
     break
     ;;
     "Full Grade Matrix")

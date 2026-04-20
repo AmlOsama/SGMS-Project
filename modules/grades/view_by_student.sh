@@ -5,7 +5,7 @@ function view_grades_by_student()
 {
     clear
     #validate student exists
-    local stu_file=("$DB_DIR/students/"*.stu)
+    local stu_files=("$DB_DIR/students/"*.stu)
    if [ ! -f "${stu_files[0]}" ]
     then
         echo "No students found!"
@@ -65,7 +65,7 @@ function view_grades_by_student()
     local letter=$(echo "$line" | cut -d'|' -f3)
 
     #extract subject code from grade file name
-    sub_code=$(echo "$grade_file" | cut -d'/' -f3 | cut -d'.' -f1)
+    sub_code=$(echo "$grade_file" | cut -d'/' -f4 | cut -d'.' -f1)
 
     #get subject name  
     local sub_name="[DELETED SUBJECT]"

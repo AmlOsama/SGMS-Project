@@ -66,7 +66,9 @@ function student_transcript() {
         local letter=$(echo "$line" | cut -d'|' -f3)
         
         #get sub code from filename
-        sub_code=$(echo "$grade_file" | cut -d'/' -f3 | cut -d'.' -f1)
+        sub_code=$(echo "$grade_file" | cut -d'/' -f4 | cut -d'.' -f1)
+        #  local sub_code="${grade_file##*/}" #cs50.grd
+        # sub_code="${sub_code%.grd}" #cs50
         
         #sub name
         local sub_name="[DELETED SUBJECT]"
