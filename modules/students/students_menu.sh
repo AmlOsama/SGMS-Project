@@ -3,7 +3,6 @@
 source ./modules/students/add_student.sh
 source ./modules/students/list_students.sh
 source ./modules/students/update_student.sh
-source ./modules/students/search_student.sh
 source ./modules/students/delete_student.sh
 
 PS3=$'\nChoose an option [1,2,3,....]: '
