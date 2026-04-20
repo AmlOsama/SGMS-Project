@@ -13,7 +13,7 @@ do
     echo "======================================"
     echo "============ Students Menu ==============="
     echo "======================================"
-    select option in "Add Student" "List Students" "Update Student" "Search for Student" "Delete Student" "Back to Main Menu"
+    select option in "Add Student" "List Students" "Update Student"  "Delete Student" "Back to Main Menu"
     do
         case $option in
             "Add Student")
@@ -28,10 +28,7 @@ do
                 update_stu
                 break
                 ;;
-            "Search for Student")
-                search_stu
-                break
-                ;;
+            
             "Delete Student")
                 delete_stu
                 break
